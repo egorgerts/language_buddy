@@ -1,4 +1,5 @@
 import requests
+import os
 YANDEX_API_KEY = os.getenv('YANDEX_API_KEY')
 YANDEX_FOLDER_ID = os.getenv('YANDEX_FOLDER_ID')
 
@@ -11,7 +12,6 @@ def yandex_translate(text: str) -> str:
         "Authorization": f"Api-Key {YANDEX_API_KEY}"
     }
     data = {
-        "folder_id": YANDEX_FOLDER_ID,
         "texts": [text],
         "targetLanguageCode": "ru"
     }
