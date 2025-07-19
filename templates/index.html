@@ -1,0 +1,21 @@
+<h1>Language Buddy</h1>
+<form method="post">
+    <textarea name="text" rows="10" cols="50" placeholder="Введите текст..."></textarea><br>
+    <button type="submit">Анализировать</button>
+</form>
+{% if text %}
+    <h2>Введённый текст:</h2>
+    <p>{{ text }}</p>
+{% endif %}
+<h2>Слова</h2>
+<ul>
+    {% for word, translation in words %}
+        <li>{{ word }}{% if translation %} — {{ translation }}{% endif %}</li>
+    {% endfor %}
+</ul>
+<h2>Словосочетания</h2>
+<ul>
+    {% for phrase, translation in phrases %}
+        <li>{{ phrase }}{% if translation %} — {{ translation }}{% endif %}</li>
+    {% endfor %}
+</ul>
