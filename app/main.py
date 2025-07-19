@@ -5,7 +5,7 @@ from app.db_api import get_words_and_phrases
 from app.translate_api import update_translations
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), '../templates'))
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
