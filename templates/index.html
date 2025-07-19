@@ -19,3 +19,17 @@
         <li>{{ phrase }}{% if translation %} — {{ translation }}{% endif %}</li>
     {% endfor %}
 </ul>
+
+<h2>Карточки для заучивания</h2>
+<h3>Слова</h3>
+<ul>
+    {% for word, translation in word_cards %}
+        <li><strong>{{ word }}</strong> — {{ translation }}</li>
+    {% endfor %}
+</ul>
+<h3>Словосочетания</h3>
+<ul>
+    {% for phrase, translation in phrase_cards %}
+        <li><strong>{{ phrase }}</strong> — {{ translation }}</li>
+    {% endfor %}
+</ul>

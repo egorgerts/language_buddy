@@ -1,3 +1,14 @@
+# Генерация карточек для заучивания
+def generate_flashcards():
+    import sqlite3
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute('SELECT word, translation FROM words WHERE translation IS NOT NULL')
+    word_cards = c.fetchall()
+    c.execute('SELECT phrase, translation FROM phrases WHERE translation IS NOT NULL')
+    phrase_cards = c.fetchall()
+    conn.close()
+    return word_cards, phrase_cards
 import sqlite3
 from typing import List, Tuple
 import re
