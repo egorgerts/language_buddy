@@ -1,7 +1,6 @@
 import requests
 import os
 YANDEX_API_KEY = os.getenv('YANDEX_API_KEY')
-YANDEX_FOLDER_ID = os.getenv('YANDEX_FOLDER_ID')
 
 def yandex_translate(text: str) -> str:
     if not YANDEX_API_KEY:
